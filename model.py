@@ -6,6 +6,12 @@ class DBSCANClustering:
     def __init__(self, eps: float = 0.3, min_samples: int = 5):
         self.model = DBSCAN(eps=eps, min_samples=min_samples)
 
+    def preprocess(self, data: List[Dict]) -> pd.DataFrame:
+        """Preprocesses the input data into a DataFrame suitable for clustering."""
+        processed_df = pd.DataFrame(data)
+        processed_df = processed_df.notnull().astype(int)
+        return processed_df
+    
     def fit(self, X: Any) -> None:
         """Fits the model on the data."""
         self.model.fit(X)
@@ -22,11 +28,6 @@ class DBSCANClustering:
         """Loads the clustering model from a file."""
         raise NotImplementedError("Load method not implemented")
     
-    def preprocess(self, data: List[Dict]) -> pd.DataFrame:
-        """
-        Preprocesses the input data into a DataFrame suitable for clustering.
-        """
-        processed_df = pd.DataFrame(data)
-        processed_df = processed_df.notnull().astype(int)
-        return processed_df
-
+    def update(self, X: pd.DataFrame) -> None:
+        """Updates the model with new data."""
+        raise NotImplementedError("Update method not implemented")

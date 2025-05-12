@@ -4,6 +4,9 @@ dotenv.load_dotenv()
 import json
 import requests
 
+HOST = os.getenv("HOST")
+PORT = os.getenv("PORT")
+
 
 def get_data(path):
     with open(path, 'r') as f:
@@ -13,9 +16,7 @@ def get_data(path):
 
 def fit(train_path):
     train_data = get_data(train_path)
-    host = os.getenv("HOST")
-    port = os.getenv("PORT")
-    response = requests.post(f'http://{host}:{port}/fit', json=train_data)
+    response = requests.post(f'http://{HOST}:{PORT}/fit', json=train_data)
     if response.status_code == 200:
         print("Data successfully sent to /fit endpoint")
     else:
@@ -24,11 +25,8 @@ def fit(train_path):
 
 def predict(val_path):
     val_data = get_data(val_path)
-    host = os.getenv("HOST")
-    port = os.getenv("PORT")
     result = []
-    for item in val_data:
-        response = requests.post(f'http://{host}:{port}/predict', json=item)
+    response = requests.post(f'http://{HOST}:{PORT}/predict', json=val_data)
     return result
 
 def health_check():
