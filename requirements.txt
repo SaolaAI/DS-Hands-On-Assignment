@@ -1,0 +1,7 @@
+pandas
+scikit-learn
+pydantic
+fastapi
+uvicorn
+dotenv
+requests
