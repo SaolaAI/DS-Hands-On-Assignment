@@ -42,7 +42,7 @@ Design and deliver an **end-to-end clustering service** that can be trained, que
 ## 🛠️ Guidelines
 
 - Clone the repository locally.
-- Download the data and save it in a location accessible to the model.
+- [Download the data](https://drive.google.com/drive/folders/1O4gbkJNW7IU8xcS2yA0Jmz_XlCRIP2cg?usp=drive_link) and save it in a location accessible to the model.
 - Update this `README.md` file as needed with relevant instructions or documentation.
 
 ---
