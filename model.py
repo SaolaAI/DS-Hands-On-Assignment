@@ -2,7 +2,7 @@ from typing import List, Dict, Any
 import pandas as pd
 from sklearn.cluster import DBSCAN
 
-class DBSCANClustering:
+class ElementsClustering:
     def __init__(self, eps: float = 0.3, min_samples: int = 5):
         self.model = DBSCAN(eps=eps, min_samples=min_samples)
 
@@ -21,13 +21,10 @@ class DBSCANClustering:
         raise NotImplementedError("Transform method not implemented")
 
     def save(self) -> Any:
-        """Saves the clustering model to a file."""
+        """Saves the clustering model."""
         raise NotImplementedError("Save method not implemented")
     
     def load(self) -> Any:
-        """Loads the clustering model from a file."""
+        """Loads the clustering model."""
         raise NotImplementedError("Load method not implemented")
     
-    def update(self, X: pd.DataFrame) -> None:
-        """Updates the model with new data."""
-        raise NotImplementedError("Update method not implemented")
