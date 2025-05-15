@@ -11,12 +11,12 @@ Design and deliver an **end-to-end clustering service** that can be trained, que
 ### Task #1 - Model Inference Implementation
 
 - Implement the missing methods in the `ElementsClustering` class inside `model.py`.
-- Complete the implementation of the FastAPI app (`app.py`) by adding:
+- Complete the implementation of the FastAPI app (`app.py`):
   - `POST /fit` route:  
     Receives a training set, fits the model, and saves it.
   - `POST /predict` route:  
     Receives validation data (one item at a time), loads the model, and returns the prediction.
-- Extend `main.py` to send requests to both `/fit` and `/predict` to demonstrate a full pipeline.
+- Run `main.py` to send requests to both `/fit` and `/predict` to demonstrate a full pipeline. Extend it as needed.
 
 ---
 
